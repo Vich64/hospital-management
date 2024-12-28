@@ -100,17 +100,26 @@ public:
         cout << "No patients left to process.\n";
     }
 
-    // Display all patients
-    void DisplayPatients() {
+    // Display patients
+    void DisplayRed() {
         cout << "\nDisplaying Red Patients (Top to Bottom):\n";
         DisplayStack(Red_Top);
-
+    }
+    void DisplayYellow(){
         cout << "\nDisplaying Yellow Patients (Top to Bottom):\n";
         DisplayStack(Yellow_Top);
-
+    }
+    void DisplayGreen() {
         cout << "\nDisplaying Green Patients (Top to Bottom):\n";
         DisplayStack(Green_Top);
     }
+
+    void DisplayPatients() {
+        DisplayRed();
+        DisplayYellow();
+        DisplayGreen();
+    }
+
 
     // Display operated patients history
     void DisplayOperatedPatientsHistory() {
@@ -349,18 +358,19 @@ int main() {
                 cout <<"2. Display all Yellow\n";
                 cout <<"3. Display all Green\n";
                 cout <<"4. Display all\n";
+                cout << "Choose an option: ";
                 cin >> choice;
 
                 switch (choice)
                 {
                 case 1:
-                    // hospital.DisplayRed();
+                    hospital.DisplayRed();
                     break;
                 case 2:
-                    // hospital.DisplayYellow();
+                    hospital.DisplayYellow();
                     break;
                 case 3:
-                    // hospital.DisplayGreen();
+                    hospital.DisplayGreen();
                     break;
                 case 4:
                     hospital.DisplayPatients();
